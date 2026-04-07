@@ -183,7 +183,7 @@ const getMiniCardStyle = (idx) => {
         <div
           class="col-span-4 bg-white rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-200 p-10 flex flex-col relative overflow-hidden h-[750px]">
           <div class="absolute top-10 right-10 z-30">
-            <h3 class="text-xl font-black text-gray-900">오늘의 명함 카나리006</h3>
+            <h3 class="text-xl font-black text-gray-900">오늘의 명함 카나리007</h3>
           </div>
 
           <div class="flex-1 relative flex items-center justify-center" @wheel.prevent="handleScroll">
