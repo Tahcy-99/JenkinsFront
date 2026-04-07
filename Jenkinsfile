@@ -1,7 +1,6 @@
 pipeline {
   agent {
     kubernetes {
-      namespace 'lsj'
       label "node-kaniko-${UUID.randomUUID().toString()}"
       defaultContainer 'node'
       yaml """
