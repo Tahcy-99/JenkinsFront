@@ -45,7 +45,7 @@ spec:
       steps {
         container('node') {
           checkout([$class: 'GitSCM',
-            branches: [[name: '*/master']],
+            branches: [[name: '/master']],
             userRemoteConfigs: [[url: 'https://github.com/Tahcy-99/JenkinsFront.git']]
           ])
         }
