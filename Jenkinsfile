@@ -22,6 +22,11 @@ spec:
           mountPath: /kaniko/.docker
         - name: workspace
           mountPath: /workspace
+    - name: kubectl
+      image: bitnami/kubectl:latest
+      command: ['sleep', 'infinity']
+      securityContext:
+        runAsUser: 0
   volumes:
     - name: workspace
       emptyDir: {}
@@ -87,10 +92,12 @@ spec:
     }
     stage('Deploy to Kubernetes') {
       steps {
+        container('kubectl'){
           script {
               // Deployment 재시작을 통해 최신 이미지 Pull 유도
               sh "kubectl rollout restart deployment/poticard-frontend-canary"
           }
+        }
       }
     }
   }
