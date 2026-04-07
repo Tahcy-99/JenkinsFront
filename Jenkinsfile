@@ -86,5 +86,14 @@ spec:
         echo "Pushed: ${IMAGE_NAME}:${IMAGE_TAG}"
       }
     }
+
+    stage('Deploy to Kubernetes') {
+      steps {
+          script {
+              // Deployment 재시작을 통해 최신 이미지 Pull 유도
+              sh "kubectl rollout restart deployment/poticard-frontend-stable -n lsj"
+          }
+      }
+    }
   }
 }
